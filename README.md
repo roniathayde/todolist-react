@@ -2,49 +2,63 @@
 
 #### By: Roni Athayde 👨‍💻
 
-## Vizualize o projeto em tempo real aqui!:
-_em-andamento-aguarde..._ 🔧
+## View the project in real time here!:
+_in-progress-wait..._ 🔧
 
-### Imagens do projeto:
-Seção para adição de tasks ( sem nenhuma task )
+### project images:
+
+Section for adding tasks (without any tasks)
+
 ![add tasks no tasks](./imagens-project/add-tasks-no-tasks.jpg)
-Seção para adição de tasks ( com uma task não marcada )
+
+Section for adding tasks (with an unmarked task)
+
 ![add tasks one task no checked](./imagens-project/add-tasks-one-task-no-checked.jpg)
-Seção de editar task
+
+Edit task section
+
 ![edit tasks](./imagens-project/edit-tasks.jpg)
-Uma task marcada
+
+A scheduled task
+
 ![a task checked](./imagens-project/task-checked.jpg)
-Interação
+
+Interaction
+
 ![a task checked](./imagens-project/video.gif)
 
 
 
-## Tecnologias utilizadas:
+## Technologies used:
 * react.js ( js )🤖
 * tailwind ( css ) 🎨
 
-## Conceitos utilizados em react.js
+## Concepts used in react.js
 * useState - Hook
 * useContext - Hook
 * props
 
-## Como testar o projeto localmente?
+## How to test the project locally?
 
-Para iniciar o projeto na sua máquina basta que use o comando:
+To start the project on your machine just use the command:
 
 #### `git clone https://github.com/roniathayde/todolist-react.git`
 
-Assim que o projeto for clonado, abra a pasta que contém os arquivo do projeto com o comando:
+Once the project is cloned, open the folder containing the project files with the command:
 
 #### `cd todolist-react`
 
 
-Agora basta que nós baixemos as dependências do projeto que estão contiadas no package.json com o comando:
+Now all we have to do is download the project's dependencies that are contained in package.json with the command:
 
 #### `npm i` ou `npm install`
 
-Com o projeto instalado localmente agora é só inicia-lo com o comando:
+With the project installed locally, now just start it with the command:
 
 #### `npm start`
 
-Seu projeto react está rodando 🎉😆
+Your react project is running 🎉😆
+
+#### Attention ⚠️: if you have anything that can help me with this project, please do not hesitate to contact me!
+
+Email 📩 : pontes014@gmail.com
