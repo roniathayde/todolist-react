@@ -1,13 +1,43 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useContext } from "react";
+import { GlobalContext } from "../../contexts/EditComponentContext";
 
 
 export function EditTask({state}) {
 
-    const {allTasks, setAllTasks, statusEdit, setStatusEdit,titleEditRef, descriptionEditRef } = state
 
-    console.log('edit',statusEdit)
-    // titleEditRef.current.value = '';
-    // descriptionEditRef.current.value = ''; 
+    const  {  editedTask, setContextEditTask } = useContext(GlobalContext);  
+
+    const { allTasks, setAllTasks, statusEdit, setStatusEdit, titleEditRef, descriptionEditRef } = state
+    
+    const applyEditTask = ()=>{
+
+        console.log(editedTask)
+
+        console.log(titleEditRef.current.value)
+        console.log(descriptionEditRef.current.value)
+
+        setAllTasks(prev=> {
+
+            console.log(prev)
+
+            prev.forEach( el => {
+                
+                console.log(el)
+
+                if ( el.key == editedTask ) {
+
+                    el.title = titleEditRef.current.value;
+                    el.description = descriptionEditRef.current.value;
+
+                }
+
+            })
+
+            return prev
+        })
+
+
+    }
 
 
     return (
@@ -32,7 +62,7 @@ export function EditTask({state}) {
 
             <div className=" flex flex-row justify-between items-start">
             
-            <button onClick={()=> console.log('')}  className="p-2 w-24 rounded-lg bg-sky-400 text-gray-200">Edit task</button> 
+            <button onClick={()=> applyEditTask()}  className="p-2 w-24 rounded-lg bg-sky-400 text-gray-200">Edit task</button> 
             <button onClick={()=>{setStatusEdit(prev=> !prev)}} className="p-2 w-24 rounded-lg bg-red-600 text-gray-200">Cancel</button> 
 
             </div>

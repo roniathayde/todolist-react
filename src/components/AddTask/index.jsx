@@ -4,7 +4,7 @@ import { Tasks } from "../Tasks";
 
 export function AddTask({state}) {
 
-    // console.log('aqui',state.allTasks, state.setAllTasks)
+
 
     const {allTasks, setAllTasks, statusAdd, setStatusAdd} = state
 
@@ -80,12 +80,7 @@ export function AddTask({state}) {
 
             </header>
         }
-          
-  
-  
-          {/* LISTA DE TAREFAS */}
-  
-         
+                   
   
         </div>
   

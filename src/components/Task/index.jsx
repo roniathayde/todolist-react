@@ -1,6 +1,13 @@
 import { Check, Edit, Trash, X } from "lucide-react"
+import { GlobalContext } from "../../contexts/EditComponentContext";
+import { useContext } from "react";
 
 export function Task ( {state: {key,title,dateTask,status,allTasks, setAllTasks, statusEdit,setStatusEdit, titleEditRef, descriptionEditRef}} ) {
+
+
+
+    const  {  editedTask, setContextEditTask } = useContext(GlobalContext);  
+
 
     
 
@@ -18,47 +25,38 @@ export function Task ( {state: {key,title,dateTask,status,allTasks, setAllTasks,
         return [...tasks]
       } )
   
-  
-  
     }
   
     const handleRemoveTask = (key)=> {
       setAllTasks(prevAllTasks => prevAllTasks.filter(tasks => tasks.key != key))
     }
 
-    // const handleEditTask = (key)=> {
-    //     console.log('passou aqui')
-    //     setAllTasks(prevAllTasks => prevAllTasks.filter(tasks => tasks.key != key))
-    //   }
-
     function handleStatusEditTask( key ){
-
         
-  
+        setContextEditTask(prev=>{
+            
+            prev = key
+            
+            console.log('context', prev)
+
+            return prev
+        });
+
         setAllTasks( tasks => {
           tasks.forEach((task) => {
-      
-            if ( task.key === key ) {
-                console.log(task)
-                console.log('aqui', titleEditRef?.current, descriptionEditRef );
-                // titleEditRef, descriptionEditRef
+            
+              if ( task.key === key ) {
 
-                // titleEditRef.current.value = task.title
-                // descriptionEditRef.current.value  = task.description
+                titleEditRef.current.value = task.title
+                descriptionEditRef.current.value  = task.description
 
-                console.log('taskedit',statusEdit)
-
-            //   return [...tasks, task.title = titleEditRef.current.value,task.description = descriptionEditRef.current.value ]
+              return [...tasks ]
             }
       
           })
       
           return [...tasks]
         } )
-
-        
-      
-      
       
       }
   
@@ -79,7 +77,15 @@ export function Task ( {state: {key,title,dateTask,status,allTasks, setAllTasks,
              
             </div> 
   
-            <div onClick={ ()=> { setStatusEdit(prev=> { setTimeout(()=> {handleStatusEditTask(key);},1000); return !prev } );  } } className="rounded p-2 bg-slate-100 w-8 flex flex-row justify-center items-center cursor-pointer">
+            <div onClick={ ()=> { setStatusEdit(prev=> { setTimeout(()=> {
+                handleStatusEditTask(key);},400);  
+                    if (prev) {
+                        return prev
+                    }
+                    return !prev
+                } );  }
+                
+            } className="rounded p-2 bg-slate-100 w-8 flex flex-row justify-center items-center cursor-pointer">
   
               <Edit className='text-gray-950 font-bold'/>
              
