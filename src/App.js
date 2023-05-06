@@ -19,7 +19,7 @@ function App() {
   const descriptionEditRef = useRef(null);
   
   return (
-      <article className="flex flex-col justify-center items-center">
+      <article className="flex py-6 flex-col justify-center items-center">
         <GlobalContext.Provider value={ {editedTask,setContextEditTask} }>
 
           <AddTask state={{allTasks, setAllTasks, statusAdd, setStatusAdd}}/>
