@@ -1,5 +1,5 @@
 # To-do List react.js ok ✅
-![GitHub](https://img.shields.io/github/license/roniathayde/todolist-react)
+[![licence mit](https://img.shields.io/github/license/roniathayde/todolist-react)](https://github.com/roniathayde/todolist-react/blob/main/LICENSE)
 
 #### By: Roni Athayde 👨‍💻
 
